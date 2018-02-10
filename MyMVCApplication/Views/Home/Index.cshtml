@@ -1,0 +1,77 @@
+﻿<h2>Custom - Order Management </h2>
+  
+
+   @(Html.Kendo().Grid<MyMVCApplication.Models.CustomerVM>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Name);
+            columns.Bound(c => c.Address);
+            columns.Bound(c => c.Mobileno);
+            columns.Bound(c => c.OrderPrice);
+            columns.Bound(c => c.OrderDate);
+            columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+        })
+        .HtmlAttributes(new { style = "height: 350px;" })
+        .Scrollable()
+        .Groupable()
+        .Sortable()
+        .ToolBar(toolbar => toolbar.Create())
+        .Editable(editable => editable.Mode(GridEditMode.InLine).ConfirmDelete("test").DisplayDeleteConfirmation("Test"))
+        .Pageable(pageable => pageable
+            .Refresh(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Events(events => events.Error("error_handler"))
+            .Model(model => model.Id(p => p.CustomerID))
+            .Create(update => update.Action("Customers_Create", "CusomterGrid"))
+            .Read(read => read.Action("Customers_Read", "CusomterGrid"))
+            .Update(update => update.Action("Customers_Update", "CusomterGrid"))
+            .Destroy(update => update.Action("Customers_Destroy", "CusomterGrid"))
+            .PageSize(20)
+        )
+    )
+
+    <script type="text/javascript">
+    function error_handler(e) {    
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function() {
+                        message += this + "\n";
+                    });
+                }
+            });        
+            alert(message);
+        }
+    }
+</script>
+
+<style>
+    body {
+    font-size: 12px;
+    font-family: "Roboto", Arial, Sans-serif;
+}
+    .customer-photo {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-size: 32px 35px;
+        background-position: center center;
+        vertical-align: middle;
+        line-height: 32px;
+        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+        margin-left: 5px;
+    }
+
+    .customer-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 32px;
+        padding-left: 3px;
+    }
+</style>

@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMVCApplication", "MyMVCApplication\MyMVCApplication.csproj", "{966DE9AB-3E19-44D9-A659-474A22E41B49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMVCApplication.Tests", "MyMVCApplication.Tests\MyMVCApplication.Tests.csproj", "{FD5135F4-8A98-435E-AC10-A5B3D6712399}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{966DE9AB-3E19-44D9-A659-474A22E41B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966DE9AB-3E19-44D9-A659-474A22E41B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966DE9AB-3E19-44D9-A659-474A22E41B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966DE9AB-3E19-44D9-A659-474A22E41B49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD5135F4-8A98-435E-AC10-A5B3D6712399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD5135F4-8A98-435E-AC10-A5B3D6712399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD5135F4-8A98-435E-AC10-A5B3D6712399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD5135F4-8A98-435E-AC10-A5B3D6712399}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

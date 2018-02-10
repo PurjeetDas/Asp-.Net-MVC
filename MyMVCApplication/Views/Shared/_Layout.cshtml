@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+     @Scripts.Render("~/bundles/jquery")
+    @RenderSection("head", required: false)
+    @Styles.Render("~/Content/kendo/css")
+
+
+</head>
+<body>
+	@RenderBody()
+       
+        @Scripts.Render("~/bundles/kendo")
+</body>
+</html>
