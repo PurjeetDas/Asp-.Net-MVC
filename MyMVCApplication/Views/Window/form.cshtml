@@ -1,0 +1,19 @@
+﻿@* As this is loaded in an iframe, the view should have a layout in order to load an entire HTML page. *@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model MyMVCApplication.Models.MyModel
+
+@using (Html.BeginForm("MyModel_Create", "MyModel", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+
+    @Html.EditorForModel(Model);
+    <br/>
+    @(Html.Kendo().Button()
+        .Name("SubmitBtn")
+        .HtmlAttributes(new { type = "submit" })
+        .Content("Submit")
+    )
+}

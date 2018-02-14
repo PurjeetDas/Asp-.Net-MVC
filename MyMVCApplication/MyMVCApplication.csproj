@@ -89,6 +89,7 @@
     <Folder Include="Scripts\kendoui\" />
     <Folder Include="Content\kendo\" />
     <Folder Include="Scripts\jquery\" />
+    <Folder Include="Views\Window\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -102,6 +103,9 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\CustomerVM.cs" />
     <Compile Include="Models\CustomerService.cs" />
+    <Compile Include="Controllers\WindowController.cs" />
+    <Compile Include="Models\MyModel.cs" />
+    <Compile Include="Controllers\MyModelController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -1494,6 +1498,7 @@
     <Content Include="Content\kendo\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\Uniform\sprite_kpi_2x.png" />
     <Content Include="Scripts\jquery\jquery.js" />
+    <Content Include="Views\Window\form.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\kendoui\js\cultures\kendo.culture.aa.min.js.map" />
