@@ -1,6 +1,71 @@
-﻿<h2>Custom - Order Management </h2>
-  
+﻿
+@using Kendo.Mvc.UI
 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card ">
+  <div class="card-header card-info">
+    <b>Add New Customer</b>
+  </div>
+
+    <br>
+    <br>
+  <div class="card-block">
+    <div class="container">
+  <form>
+    <div class="form-group row">
+      <label for="state" class="col-sm-2 col-form-label">State</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="state" placeholder="State">
+      </div>
+    </div>
+
+    <br>
+
+
+                 @(Html.Kendo().Grid<MyMVCApplication.Models.CustomerVM>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Name);
+            columns.Bound(c => c.Address);
+            columns.Bound(c => c.Mobileno);
+            columns.Bound(c => c.OrderPrice);
+            columns.Bound(c => c.OrderDate);
+            columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+        })
+        .HtmlAttributes(new { style = "height: 350px;" })
+        .Scrollable()
+        .Sortable()
+        .ToolBar(toolbar => toolbar.Create())
+        .Editable(editable => editable.Mode(GridEditMode.InLine).ConfirmDelete("test").DisplayDeleteConfirmation("Test"))
+        .Pageable(pageable => pageable
+            .Refresh(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Events(events => events.Error("error_handler"))
+            .Model(model => model.Id(p => p.CustomerID))
+            .Create(update => update.Action("Customers_Create", "CusomterGrid"))
+            .Read(read => read.Action("Customers_Read", "CusomterGrid"))
+            .Update(update => update.Action("Customers_Update", "CusomterGrid"))
+            .Destroy(update => update.Action("Customers_Destroy", "CusomterGrid"))
+            .PageSize(20)
+        )
+    )
+   
+    
+  </form>
+</div>
+
+
+        
+  </div>
+</div>
+
+<!--
   <div class="box wide hidden-on-narrow" style="z-index:10000">
     <div class="box-col">
     <h4>API Functions</h4>
@@ -12,7 +77,7 @@
     </ul>
     </div>
    
-</div>
+</div> -->
     
 @(Html.Kendo().Window()
         .Name("window")
@@ -27,7 +92,7 @@
         .LoadContentFrom("ApiContent", "Window")
 )
 
-<div class="responsive-message"></div>
+
 
 <script>
   
@@ -58,38 +123,10 @@
 
 
 
-   @(Html.Kendo().Grid<MyMVCApplication.Models.CustomerVM>()
-        .Name("grid")
-        .Columns(columns =>
-        {
-            columns.Bound(c => c.Name);
-            columns.Bound(c => c.Address);
-            columns.Bound(c => c.Mobileno);
-            columns.Bound(c => c.OrderPrice);
-            columns.Bound(c => c.OrderDate);
-            columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
-        })
-        .HtmlAttributes(new { style = "height: 350px;" })
-        .Scrollable()
-        .Groupable()
-        .Sortable()
-        .ToolBar(toolbar => toolbar.Create())
-        .Editable(editable => editable.Mode(GridEditMode.InLine).ConfirmDelete("test").DisplayDeleteConfirmation("Test"))
-        .Pageable(pageable => pageable
-            .Refresh(true)
-            .PageSizes(true)
-            .ButtonCount(5))
-        .DataSource(dataSource => dataSource
-            .Ajax()
-            .Events(events => events.Error("error_handler"))
-            .Model(model => model.Id(p => p.CustomerID))
-            .Create(update => update.Action("Customers_Create", "CusomterGrid"))
-            .Read(read => read.Action("Customers_Read", "CusomterGrid"))
-            .Update(update => update.Action("Customers_Update", "CusomterGrid"))
-            .Destroy(update => update.Action("Customers_Destroy", "CusomterGrid"))
-            .PageSize(20)
-        )
-    )
+
+  
+
+    
 
     <script type="text/javascript">
     function error_handler(e) {    
@@ -107,28 +144,8 @@
     }
 </script>
 
-<style>
-    body {
-    font-size: 12px;
-    font-family: "Roboto", Arial, Sans-serif;
-}
-    .customer-photo {
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background-size: 32px 35px;
-        background-position: center center;
-        vertical-align: middle;
-        line-height: 32px;
-        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
-        margin-left: 5px;
-    }
 
-    .customer-name {
-        display: inline-block;
-        vertical-align: middle;
-        line-height: 32px;
-        padding-left: 3px;
-    }
-</style>
+   
+
+
+

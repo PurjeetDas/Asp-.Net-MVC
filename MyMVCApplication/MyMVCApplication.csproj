@@ -90,6 +90,8 @@
     <Folder Include="Content\kendo\" />
     <Folder Include="Scripts\jquery\" />
     <Folder Include="Views\Window\" />
+    <Folder Include="Content\Bootstrap\" />
+    <Folder Include="Content\MyMVCApplication\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -1499,6 +1501,14 @@
     <Content Include="Content\kendo\Uniform\sprite_kpi_2x.png" />
     <Content Include="Scripts\jquery\jquery.js" />
     <Content Include="Views\Window\form.cshtml" />
+    <Content Include="Content\Bootstrap\bootstrap-grid.min.css" />
+    <Content Include="Content\Bootstrap\bootstrap-reboot.min.css" />
+    <Content Include="Content\Bootstrap\bootstrap.min.css" />
+    <Content Include="Content\MyMVCApplication\app.css" />
+    <Content Include="Scripts\jquery\bootstrap.min.js" />
+    <Content Include="Content\Bootstrap\bootstrap-grid.css" />
+    <Content Include="Content\Bootstrap\bootstrap-reboot.css" />
+    <Content Include="Content\Bootstrap\bootstrap.css" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\kendoui\js\cultures\kendo.culture.aa.min.js.map" />
@@ -2600,6 +2610,12 @@
     <None Include="Content\kendo\kendo.uniform.mobile.min.css.map" />
     <None Include="Kendo.Mvc.xml" />
     <None Include="Scripts\Kendo\kendo.aspnetmvc.min" />
+    <None Include="Content\Bootstrap\bootstrap-grid.css.map" />
+    <None Include="Content\Bootstrap\bootstrap-grid.min.css.map" />
+    <None Include="Content\Bootstrap\bootstrap-reboot.css.map" />
+    <None Include="Content\Bootstrap\bootstrap-reboot.min.css.map" />
+    <None Include="Content\Bootstrap\bootstrap.css.map" />
+    <None Include="Content\Bootstrap\bootstrap.min.css.map" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

@@ -28,3 +28,4 @@
 /Users/purjeet/Applications/MyMVCApplication/MyMVCApplication/obj/Debug/MyMVCApplication.csproj.CoreCompileInputs.cache
 /Users/purjeet/Applications/MyMVCApplication/MyMVCApplication/obj/Debug/MyMVCApplication.dll
 /Users/purjeet/Applications/MyMVCApplication/MyMVCApplication/obj/Debug/MyMVCApplication.pdb
+/Users/purjeet/Applications/MyMVCApplication/MyMVCApplication/obj/Debug/MyMVCApplication.csprojResolveAssemblyReference.cache

@@ -23,3 +23,4 @@
 /Users/purjeet/Applications/MyMVCApplication/MyMVCApplication.Tests/obj/Debug/MyMVCApplication.Tests.csproj.CoreCompileInputs.cache
 /Users/purjeet/Applications/MyMVCApplication/MyMVCApplication.Tests/obj/Debug/MyMVCApplication.Tests.dll
 /Users/purjeet/Applications/MyMVCApplication/MyMVCApplication.Tests/obj/Debug/MyMVCApplication.Tests.pdb
+/Users/purjeet/Applications/MyMVCApplication/MyMVCApplication.Tests/bin/Debug/Kendo.Mvc.dll
